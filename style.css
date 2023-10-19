@@ -1,26 +1,52 @@
 @import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 * {
-  box-sizing: border-box;
-  /* padding: 0;
-  margin: 0; */
   font-family: "Mochiy Pop One", sans-serif;
   text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
 }
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+:root {
+  --glow-color: var(--main-color);
+
+  --bg-color: #1f242d;
+  --second-bg-color: #323946;
+  --text-color: #ffffff;
+  --main-color:#01ABDE;
+  --btn-color: hsl(186, 93%, 52%);
+  --btn-color: rgb(255, 255, 255);
+}
+
 
 body {
   /* display: flex; */
   /* justify-content: center;
   align-items: center; */
 
-  min-height: 100vh;
+  max-height: 100vh;
   background: #252839;
+}
+section {
+  min-height: 100vh;
+  padding: 10rem 9% 2rem;
 }
 /* ---------------------------
     This the navbar area
 --------------------------- */
 .header {
   position: fixed;
-  background-color:rgb(55, 75, 80);
+  background-color: #252839;
   top: 0;
   left: 0;
   width: 100%;
@@ -34,7 +60,7 @@ body {
   color: white;
   margin-left: 20px;
 
-  font-size: 40px;
+  font-size: 4rem;
   /* color: var(--text-color); */
   font-weight: 600;
   cursor: pointer;
@@ -53,7 +79,7 @@ ul li {
   list-style: none;
 }
 ul li a {
-  font-size: 20px;
+  font-size: 22px;
   text-decoration: none;
   letter-spacing: 2px;
   line-height: 1em;
@@ -77,3 +103,336 @@ ul li a:hover::before {
 }
 
 /* This the navbar area */
+section {
+  min-height: 100vh;
+  padding: 10rem 9% 2rem;
+}
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+span {
+  color: var(--main-color);
+}
+.w-span {
+  color: var(--text-color);
+}
+
+.home-img {
+  position: relative;
+  display: inline-block;
+  margin: 50px;
+  transition: 0.5s;
+}
+.home-img img {
+  display: inline;
+  border-radius: 20px;
+  /* transform: translateX(-15); */
+  transition: 0.5s;
+}
+
+.home-img .topup {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.home-img:hover .topup {
+  display: inline;
+  .container:hover .overlay {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.home-content h3 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.home-content h3:nth-of-type(2) {
+  margin-bottom: 2rem;
+}
+.home-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.home-content p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  /* width: 800px; */
+  margin-right: 25px;
+}
+
+.social-media a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  background-color: rgb(158, 151, 151);
+  border: 0.3rem solid var(--main-color);
+  border-radius: 50%;
+  font-size: 2rem;
+  color: var(--main-color);
+  margin: 3rem 1.5rem 3rem 0;
+  transition: 0.5s;
+}
+.social-media a:hover {
+  background: var(--main-color);
+  color: var(--second-bg-color);
+  box-shadow: 0 0 1rem var(--main-color);
+}
+.btn {
+  display: inline-block;
+  padding: 1rem 2.8rem;
+  background: var(--main-color);
+  border-radius: 4rem;
+  box-shadow: 0 0 1rem var(--main-color);
+  font-size: 1rem;
+  /* color: var(--bg-color); */
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  border: 4px solid var(--main-color);
+  transition: 0.5s;
+}
+.btn:hover {
+  box-shadow: none;
+  color: var(--btn-color);
+  background: transparent;
+}
+
+.glowing-btn {
+  position: relative;
+  /* color: rgb(3, 255, 20); */
+  cursor: pointer;
+  padding: 0.35em 1em;
+  border: 0.15em solid var(--glow-color);
+  border-radius: 0.45em;
+  background: none;
+  perspective: 1.5em;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  /* letter-spacing: 1em; */
+
+  -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  animation: border-flicker 2s linear infinite;
+}
+
+.glowing-txt {
+  float: left;
+  /* margin-right: -0.8em; */
+  -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--glow-color);
+  -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--glow-color);
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
+  animation: text-flicker 3s linear infinite;
+}
+
+.faulty-letter {
+  opacity: 0.5;
+  animation: faulty-flicker 2s linear infinite;
+}
+
+.glowing-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.7;
+  filter: blur(1em);
+  transform: translateY(120%) rotateX(95deg) scale(1, 0.35);
+  background: var(--glow-color);
+  pointer-events: none;
+}
+
+.glowing-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: -1;
+  background-color: var(--glow-color);
+  box-shadow: 0 0 2em 0.2em var(--glow-color);
+  transition: opacity 100ms linear;
+}
+
+.glowing-btn:hover {
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: none;
+  animation: none;
+}
+
+.glowing-btn:hover .glowing-txt {
+  animation: none;
+}
+
+.glowing-btn:hover .faulty-letter {
+  animation: none;
+  text-shadow: none;
+  opacity: 1;
+}
+
+.glowing-btn:hover:before {
+  filter: blur(1.5em);
+  opacity: 1;
+}
+
+.glowing-btn:hover:after {
+  opacity: 1;
+}
+
+@keyframes faulty-flicker {
+  0% {
+    opacity: 0.1;
+  }
+  2% {
+    opacity: 0.1;
+  }
+  4% {
+    opacity: 0.5;
+  }
+  19% {
+    opacity: 0.5;
+  }
+  21% {
+    opacity: 0.1;
+  }
+  23% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  83% {
+    opacity: 0.4;
+  }
+
+  87% {
+    opacity: 1;
+  }
+}
+
+@keyframes text-flicker {
+  0% {
+    opacity: 0.1;
+  }
+
+  2% {
+    opacity: 1;
+  }
+
+  8% {
+    opacity: 0.1;
+  }
+
+  9% {
+    opacity: 1;
+  }
+
+  12% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  30% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.7;
+  }
+  72% {
+    opacity: 0.2;
+  }
+
+  77% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes border-flicker {
+  0% {
+    opacity: 0.1;
+  }
+  2% {
+    opacity: 1;
+  }
+  4% {
+    opacity: 0.1;
+  }
+
+  8% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .glowing-btn {
+    font-size: 1em;
+  }
+}
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #22232e;
+}
+button {
+  position: relative;
+  padding: 15px 45px;
+  background: #00c2cb;
+  border-radius: 15px;
+  border: none;
+  font-size: 1.5rem;
+  color: #42455a;
+  font-weight: 500;
+  cursor: pointer;
+}
+button:hover {
+  background: #004958;
+  color: #e0ffff;
+}
+button:active{
+  transform: scale(0.95);
+}
